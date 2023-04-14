@@ -1,3 +1,6 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,100&display=swap');
+
 .App {
   text-align: center;
 }
@@ -35,4 +38,22 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.navbar {
+  background-color: #7e9fdf;
+  border-bottom: 1px solid #e99fe5;
+  padding: 0.5rem 1rem;
+}
+
+.navbar divNavBar img {
+  margin-right: 0.5rem;
+  max-width: 50px;
+  height: auto;
+}
+
+.boton{
+  margin-right: 0.7rem;
+  font-weight: bold;
+  transition: all 0.3s ease-in-out;
 }
