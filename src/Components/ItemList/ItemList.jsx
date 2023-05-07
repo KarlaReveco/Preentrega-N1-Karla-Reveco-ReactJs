@@ -3,8 +3,10 @@ import { Item } from '../Item/Item'
 
 export const ItemList = ({productos}) => {
   return (
-    <div className='ListGroup'>
+    <div className=' container '>
+      <div className=' row d-flex justify-content-center align-items-center'>
         {productos.map(elemento => <Item key={elemento.id} {...elemento} />)}
+        </div>
     </div>
   )
 }

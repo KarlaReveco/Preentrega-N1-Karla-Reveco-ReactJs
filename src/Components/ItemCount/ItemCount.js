@@ -20,11 +20,12 @@ export const ItemCount =( {stock, initial, onAdd}) => {
     }
 
     return(
-        <div className="Contador">
+        <div className="Contador badge bg-primary">
             <div className="Controles">
                 <button className="Button" onClick={disminuyeCarrito}>-</button>
                 <h3 className= "Numero"> {cantidad} </h3>
                 <button className="Button" onClick={aumentoCarrito}>+</button>
+                
 
             </div>
             <div>

@@ -3,6 +3,7 @@
 
 .App {
   text-align: center;
+  font-weight:bolder;
 }
 
 .App-logo {
@@ -41,7 +42,7 @@
 }
 
 .navbar {
-  background-color: #7e9fdf;
+  background-color: #d5a6df;
   border-bottom: 1px solid #e99fe5;
   padding: 0.5rem 1rem;
 }
@@ -58,3 +59,5 @@
   font-weight: bold;
   transition: all 0.3s ease-in-out;
 }
+
+  
