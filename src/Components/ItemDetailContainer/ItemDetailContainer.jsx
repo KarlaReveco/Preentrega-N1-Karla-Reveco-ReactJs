@@ -31,4 +31,10 @@ export const ItemDetailContainer = () => {
         })
       }, [itemId])
 
+      return (
+        <div className='container mt-5'>
+          <ItemDetail {...producto} />
+        </div>
+      )
+
 }
