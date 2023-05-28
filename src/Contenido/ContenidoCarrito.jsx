@@ -7,7 +7,7 @@ export const ContenidoCarrito = createContext ({
 
 })
 
-export const CartProvider = ({ hijos }) => {
+export const CartProvider = ({ children }) => {
     const [cart, setCart] = useState ([])
 
     console.log (cart)
@@ -43,7 +43,7 @@ export const CartProvider = ({ hijos }) => {
 
     return (
         <ContenidoCarrito.Provider value ={{ cart, addItem, removeItem, clearCart}}>
-            {hijos}
+            {children}
         </ContenidoCarrito.Provider>
     )
     }

@@ -11,7 +11,7 @@ import { CartItem } from "../CartItem/CartItem"
         return (
             <div>
                 <h1>No hay items en el carrito </h1>
-                <link to= '/' className="Option">Productos</link>
+                <Link to= '/' className="Option">Productos</Link>
             </div>
         )
     }

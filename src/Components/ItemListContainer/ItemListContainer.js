@@ -7,7 +7,7 @@ import { db } from  '../../Services/firebase/firebaseConfig'
 
 
 export const ItemListContainer = ({SaludoInicial}) => {
-const  [productos, setProducts] = useState ([])
+const  [productos, setProductos] = useState ([])
 const [loading, setLoading] = useState(true)
 const { categoryId } = useParams() 
 
@@ -16,7 +16,7 @@ useEffect(() => {
   setLoading (true)
 
   const collectionRef = categoryId
-   ? query(collection( db, 'productos'), where('category', '==', categoryId))
+   ? query(collection( db, 'productos'), where('categoria', '==', categoryId))
    : collection(db, 'productos')
 
    getDocs(collectionRef) 
@@ -25,7 +25,7 @@ useEffect(() => {
         const data = doc.data ()
         return { id: doc.id, ...data} 
     })
-      setProducts(productsAdapted)
+      setProductos(productsAdapted)
    })
    .catch(error => {
     console.log(error)

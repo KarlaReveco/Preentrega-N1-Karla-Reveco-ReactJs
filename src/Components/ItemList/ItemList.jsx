@@ -5,8 +5,9 @@ export const ItemList = ({productos}) => {
   return (
     <div className=' container '>
       <div className=' row d-flex justify-content-center align-items-center'>
-        {productos.map(elemento => <Item key={elemento.id} {...elemento} />)}
+        {productos.map(elemento => {return <Item key={elemento.id} {...elemento} />})}
         </div>
     </div>
   )
+
 }
