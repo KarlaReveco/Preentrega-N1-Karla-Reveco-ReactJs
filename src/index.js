@@ -5,20 +5,7 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { StrictMode } from 'react';
-import { initializeApp } from 'firebase/app';
-
-
-const firebaseConfig = {
-  apiKey: "AIzaSyCFvqQv04lfbi9AA4xV_f1dbtJSEgBpij0",
-  authDomain: "miappecommerce.firebaseapp.com",
-  projectId: "miappecommerce",
-  storageBucket: "miappecommerce.appspot.com",
-  messagingSenderId: "207640923973",
-  appId: "1:207640923973:web:3f413c6d3b858b5835f82c",
-  measurementId: "G-K0P4GH6LBD"
-}
-
-initializeApp (firebaseConfig)
+import './Services/firebase/firebaseConfig'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

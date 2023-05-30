@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-import { getProducts, getProductsByCategory } from '../../asynkMock'
 import { ItemList } from '../ItemList/ItemList'
 import { useParams } from 'react-router-dom'
 import { getDocs, collection, query, where } from 'firebase/firestore'
@@ -37,8 +36,8 @@ useEffect(() => {
 
 return (
   <div className='container mt-5'>
-    <hi> {SaludoInicial}</hi>
-    <ItemList productos={productos}/>
+    <h1> {SaludoInicial}</h1>
+    <ItemList productos={productos} />
   </div>
 )
 

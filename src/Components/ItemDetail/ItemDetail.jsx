@@ -1,6 +1,7 @@
 import React, { useContext, useState } from 'react'
 import { ItemCount } from '../ItemCount/ItemCount'
 import { ContenidoCarrito } from '../../Contenido/ContenidoCarrito'
+import { Link } from 'react-router-dom'
 
 
 export const ItemDetail = ({id, nombre, precio, categoria, imagen, stock, descripcion}) => {
@@ -38,7 +39,7 @@ export const ItemDetail = ({id, nombre, precio, categoria, imagen, stock, descri
 
 <footer className='ItemFooter'>{
     quantityAdded > 0 ? (
-        <link to= '/carrito' className='Option'> Terminar Compra</link>
+        <Link to= '/carrito' className='Option'> Terminar Compra</Link>
     ) : (
         <ItemCount stock={stock} initial={1} onAdd={(handleOnAdd)}/>
     )
