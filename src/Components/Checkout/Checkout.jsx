@@ -46,7 +46,7 @@ export const Checkout = () => {
                     })
                     if(outOfStock.length === 0){
                     await batch.commit()
-                    const orderRef = collection(db, 'products')
+                    const orderRef = collection(db, 'productos')
                     const orderAdded = await addDoc(orderRef, objOrder)
 
                     setOrderId(orderAdded.id)
@@ -82,7 +82,7 @@ if (orderId) {
 
 return(
 <div>
-    <h1> Checkout</h1>
+    <h1> Finalizar su compra </h1>
     <CheckoutForm onConfirm= {createOrder}/>
 </div>
 )
