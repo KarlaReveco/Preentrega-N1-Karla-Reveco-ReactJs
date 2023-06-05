@@ -21,7 +21,7 @@ export const Checkout = () => {
                     email: email
                 },
                 items: cart,
-                total: total,
+                total: total(),
                 date: Timestamp.fromDate(new Date())
             }
 
