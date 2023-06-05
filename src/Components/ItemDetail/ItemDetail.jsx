@@ -11,8 +11,12 @@ export const ItemDetail = ({id, nombre, precio, categoria, imagen, stock, descri
 
     const handleOnAdd = (cantidad) => {
         setQuantityAdded(cantidad)
+        
         const item = {
-            id, nombre, precio
+            id: id, 
+            nombre: nombre, 
+            precio: precio,
+            stock: stock
      }
 
          addItem(item, cantidad)

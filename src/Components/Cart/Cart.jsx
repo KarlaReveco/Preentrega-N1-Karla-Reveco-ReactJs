@@ -19,7 +19,7 @@ import { CartItem } from "../CartItem/CartItem"
     return (
         <div>
              {cart.map (p => <CartItem key={p.id} {...p}/>) }
-             <h2>Total: ${total}</h2>
+             <h2>Total: ${total()}</h2>
              <button onClick ={ () => clearCart ()} className= "Button"> Limpiar Carrito </button>
              <Link to ='/checkout' className="Option">Checkout</Link>
         </div>

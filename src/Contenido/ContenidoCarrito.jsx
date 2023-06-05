@@ -13,10 +13,17 @@ export const CartProvider = ({ children }) => {
     console.log (cart)
 
     const addItem = (item, cantidad) => {
-        if(!IsInCart(item.id)) {
-            setCart(prev => [...prev, {...item, cantidad}])
+
+        const enCarro = cart.filter (prod => prod.id === item.id)
+
+        const cantidadEnCarro = enCarro ? enCarro.reduce((acc, item) => item.cantidad + acc,0) : 0 
+        
+
+        if( cantidad <= (item.stock - cantidadEnCarro)) {
+            
+            setCart(prev => [...prev, {...item, cantidad: cantidad}])
         } else {
-            console.error("El producto ya fue agregado")
+            alert("El producto ya fue agregado")
         }
     }
 

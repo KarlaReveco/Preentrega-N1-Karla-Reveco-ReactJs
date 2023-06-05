@@ -16,7 +16,9 @@ export const Checkout = () => {
         try {
             const objOrder = {
                 buyer: {
-                    name, phone, email
+                    name: name,
+                    phone: phone, 
+                    email: email
                 },
                 items: cart,
                 total: total,
@@ -24,49 +26,48 @@ export const Checkout = () => {
             }
 
             const batch = writeBatch (db)
-            const outOfStock = []
+            const outOfStock =[]
             const ids = cart.map(prod => prod.id)
             const productsRef = collection(db, 'productos')
-            const productsAddedFromFirestore = await getDocs(query(productsRef, where(documentId ()), 'in', ids))
+            const productsAddedFromFirestore = await getDocs(query(productsRef, where(documentId(), 'in', ids)))
             const { docs } = productsAddedFromFirestore
 
             docs.forEach(doc => {
                 const dataDoc = doc.data()
-                const stockDb = dataDoc.stockDb
+                const stockDb = dataDoc.stock
                 const productAddedToCart = cart.find(prod => prod.id === doc.id) 
-                const prodQuantity = productAddedToCart?.quantity
+                const prodQuantity = productAddedToCart?.cantidad
 
                 if (stockDb >= prodQuantity){
                     batch.update(doc.ref, {stock: stockDb - prodQuantity})
                     } else {
                     outOfStock.push({id: doc.id, ...dataDoc})
-                    
-                    }
-                    
-                    })
-                    if(outOfStock.length === 0){
-                    await batch.commit()
-                    const orderRef = collection(db, 'productos')
-                    const orderAdded = await addDoc(orderRef, objOrder)
+                    }    
+                })
 
-                    setOrderId(orderAdded.id)
-                    clearCart()
+                if(outOfStock.length === 0){
+                await batch.commit()
+                const orderRef = collection(db, 'orders')
+                const orderAdded = await addDoc(orderRef, objOrder)
+
+                setOrderId(orderAdded.id)
+                clearCart()
+                
+                } else {
+                
+                alert('Hay productos que están fuera de stock')
+                
+                }
                     
-                    } else {
-                    
-                    console.error('Hay productos que están fuera de stock')
-                    
-                    }
-                    
-                    } catch (error){
-                    
-                    console.log(error)
-                    
-                    } finally {
-                    
-                    setLoading(false)
-                    
-                    }
+                } catch (error){
+                
+                console.log(error)
+                
+                } finally {
+                
+                setLoading(false)
+                
+                }
                     
                     
                     
@@ -76,8 +77,8 @@ if (loading) {
     return <h1> Se está generando su orden...</h1>
 }
 
-if (orderId) {
-    return <h1> El Id de su pedido es: {orderId}</h1>
+if (orderId){
+    return <h1> El Id de su pedido es:{orderId}</h1>
 }
 
 return(
