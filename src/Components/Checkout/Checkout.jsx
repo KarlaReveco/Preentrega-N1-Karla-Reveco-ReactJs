@@ -77,8 +77,8 @@ if (loading) {
     return <h1> Se está generando su orden...</h1>
 }
 
-if (orderId){
-    return <h1> El Id de su pedido es:{orderId}</h1>
+if (orderId) {
+    return <h1> El Id de su pedido es:{orderId} </h1>
 }
 
 return(
