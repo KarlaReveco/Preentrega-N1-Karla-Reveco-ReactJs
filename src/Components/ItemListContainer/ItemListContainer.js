@@ -35,7 +35,7 @@ useEffect(() => {
 }, [categoryId])
 
 if (loading) {
-  return <h1> Se está generando su orden...</h1>
+  return <h1> Cargando productos</h1>
 }
 
 return (
