@@ -1,7 +1,7 @@
 import { useContext, useState } from "react";
 import { ContenidoCarrito } from "../../Contenido/ContenidoCarrito";
 import {db} from "../../Services/firebase/firebaseConfig"
-import { collection, query, where, getDocs, writeBatch, documentId, Timestamp, doc, addDoc, updateDoc } from "firebase/firestore";
+import { collection, query, where, getDocs, writeBatch, documentId, Timestamp, addDoc} from "firebase/firestore";
 import {CheckoutForm } from "../CheckoutForm/CheckoutForm"
 
 

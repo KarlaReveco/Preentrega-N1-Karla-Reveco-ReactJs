@@ -34,11 +34,17 @@ useEffect(() => {
    })
 }, [categoryId])
 
+if (loading) {
+  return <h1> Se está generando su orden...</h1>
+}
+
 return (
   <div className='container mt-5'>
     <h1> {SaludoInicial}</h1>
     <ItemList productos={productos} />
   </div>
 )
+
+
 
 }

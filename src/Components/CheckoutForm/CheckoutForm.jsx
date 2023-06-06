@@ -15,6 +15,7 @@ export const CheckoutForm = ({ onConfirm }) => {
       email: email
     };
 
+
     onConfirm(userData);
   };
 

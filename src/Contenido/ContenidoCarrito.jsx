@@ -36,10 +36,6 @@ export const CartProvider = ({ children }) => {
         setCart ([])
     }
 
-    const IsInCart = (itemId) => {
-        return cart.some(prod => prod.id === itemId)
-    }
-
     const cartQuantity =() => {
         return cart.reduce ((acc, prod)=> (acc += prod.cantidad), 0)
     }
